@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#081a48" />
+  <title>Johnny Builds to Mars!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <span class="star star-1"></span><span class="star star-2"></span><span class="star star-3"></span>
+    <span class="star star-4"></span><span class="star star-5"></span><span class="star star-6"></span>
+    <span class="star star-7"></span><span class="star star-8"></span><span class="star star-9"></span>
+    <span class="star star-10"></span><span class="star star-11"></span><span class="star star-12"></span>
+  </div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Johnny Builds to Mars home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span><strong>Johnny</strong> <em>Builds to</em> <b>Mars!</b></span>
+      </a>
+      <div class="top-actions">
+        <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false" title="Toggle read aloud">
+          <span class="sound-icon">◖)))</span> <span class="sound-label">Read aloud</span>
+        </button>
+        <span class="page-pill" id="pagePill">FRONT COVER</span>
+      </div>
+    </header>
+
+    <section class="book-intro" id="top" aria-labelledby="mainTitle">
+      <div class="intro-copy">
+        <p class="eyebrow"><span>NEW ADVENTURE</span> <i>★</i> <span>INTERACTIVE STORY</span></p>
+        <h1 id="mainTitle">Johnny<br /><span>Builds to</span> MARS!</h1>
+        <p class="intro-subtitle">A brainstormy picture book about big ideas, brave building, and one very curious dog.</p>
+        <button class="start-button" id="startButton" type="button">Start the story <span>→</span></button>
+      </div>
+      <div class="orbit-scene" aria-label="A rocket orbiting Mars">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="mars"><span class="mars-crater crater-one"></span><span class="mars-crater crater-two"></span><span class="mars-crater crater-three"></span></div>
+        <div class="rocket-orbit"><div class="rocket" aria-hidden="true"><span class="rocket-window"></span><span class="rocket-fin fin-left"></span><span class="rocket-fin fin-right"></span><span class="flame"></span></div></div>
+        <div class="orbit-caption"><span>BLAST OFF<br />TO BIG IDEAS</span> <b>✦</b></div>
+      </div>
+    </section>
+
+    <section class="storybook" id="story" aria-label="Interactive storybook">
+      <div class="book-toolbar">
+        <div class="progress-wrap"><span>STORY TIME</span><div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div></div>
+        <div class="toolbar-hint">Tap, draw &amp; discover <span>✦</span></div>
+      </div>
+
+      <div class="page-stage">
+        <button class="page-arrow left-arrow" id="prevButton" type="button" aria-label="Previous page">←</button>
+        <article class="story-page" data-page="1" aria-labelledby="pageOneTitle">
+          <div class="text-page">
+            <div class="page-kicker"><span class="page-number">01</span><span>THE BIG IDEA</span></div>
+            <h2 id="pageOneTitle">It started with<br /><span>one very big</span> thought.</h2>
+            <div class="narrative" id="narrativeText">
+              <p class="narrator-line" data-voice="narrator">One sunny day, Johnny was bored! And all he could think was:</p>
+              <p class="quote johnny-quote" data-voice="johnny">“What if I built a rocket to <strong>MARS?!</strong>”</p>
+              <p class="narrator-line" data-voice="narrator">His dog, Max barked in excitement:</p>
+              <p class="quote max-quote" data-voice="max">“Good idea Johnny! But what do we even <strong>NEED</strong> to make a rocketship?”</p>
+              <p class="narrator-line" data-voice="narrator">Johnny frowns, stumped.</p>
+            </div>
+            <button class="listen-button" id="listenButton" type="button"><span>▶</span> Read this page aloud</button>
+            <div class="page-note"><span>★</span> Your turn: solve the expression mystery!</div>
+          </div>
+
+          <div class="interactive-page">
+            <div class="scene-label"><span>SCENE 01</span><b>THE LIVING ROOM</b></div>
+            <div class="living-room" id="livingRoom">
+              <div class="wall-sparkle sparkle-a">✦</div><div class="wall-sparkle sparkle-b">✦</div>
+              <div class="window"><span class="cloud cloud-a"></span><span class="cloud cloud-b"></span><span class="sun"></span></div>
+              <div class="picture-frame"><div class="tiny-planet">●</div><span>dream<br />big</span></div>
+              <div class="rug"></div>
+              <div class="couch"><div class="couch-back"></div><div class="couch-seat"></div><div class="couch-arm arm-left"></div><div class="couch-arm arm-right"></div><div class="couch-pillow"></div></div>
+              <div class="side-table"><div class="table-top"></div><div class="table-leg"></div><div class="table-leg two"></div><span>☕</span></div>
+              <div class="johnny character" id="johnny" aria-label="Johnny sitting on the couch">
+                <div class="speech-bubble bubble-johnny" id="johnnyBubble">What if I built a rocket to <b>MARS?!</b></div>
+                <div class="thought-bubble" id="thoughtBubble"><span class="thought-dot dot-one"></span><span class="thought-dot dot-two"></span><div class="thought-main"><span>DRAW YOUR<br /><b>ROCKET IDEA!</b></span><canvas id="ideaCanvas" width="440" height="280" aria-label="Draw your rocket idea here"></canvas><button class="clear-drawing" id="clearDrawing" type="button">clear</button></div></div>
+                <div class="hair"></div><div class="head"><span class="ear"></span><span class="ear ear-right"></span><div class="face"><span class="eye eye-left"></span><span class="eye eye-right"></span><span class="brow brow-left"></span><span class="brow brow-right"></span><span class="nose"></span><span class="mouth"></span></div></div>
+                <div class="neck"></div><div class="shirt"><span class="shirt-star">★</span></div><div class="arm arm-j-left"></div><div class="arm arm-j-right"></div><div class="leg leg-left"></div><div class="leg leg-right"></div><div class="shoe shoe-left"></div><div class="shoe shoe-right"></div>
+                <div class="character-tag">JOHNNY</div>
+              </div>
+              <div class="max character" id="max" aria-label="Max the dog">
+                <div class="speech-bubble bubble-max" id="maxBubble">Good idea, Johnny! But what do we even <b>NEED?</b></div>
+                <div class="air-puff" id="airPuff">puff!</div><div class="dog-ear dog-ear-left"></div><div class="dog-ear dog-ear-right"></div><div class="dog-head"><span class="dog-eye eye-left"></span><span class="dog-eye eye-right"></span><span class="dog-muzzle"></span><span class="dog-nose"></span><span class="dog-smile"></span></div><div class="dog-neck"></div><div class="dog-body"><span class="dog-collar"></span><span class="dog-tag">★</span></div><div class="dog-leg dog-leg-one"></div><div class="dog-leg dog-leg-two"></div><div class="dog-tail"></div><div class="character-tag">MAX</div>
+              </div>
+              <div class="scene-caption" id="sceneCaption">Johnny is SO bored...</div>
+            </div>
+
+            <div class="expression-challenge" id="expressionChallenge">
+              <div class="challenge-top"><span class="comic-burst">?</span><div><b>Which face means BORED?</b><small>Tap a photocard to help Johnny show us.</small></div></div>
+              <div class="expression-cards">
+                <button class="expression-card mad" type="button" data-expression="mad"><span class="card-face">╬_╬</span><small>MAD</small></button>
+                <button class="expression-card sad" type="button" data-expression="sad"><span class="card-face">◕︵◕</span><small>SAD</small></button>
+                <button class="expression-card happy" type="button" data-expression="happy"><span class="card-face">◠‿◠</span><small>HAPPY</small></button>
+                <button class="expression-card eye-roll" type="button" data-expression="eye-roll"><span class="card-face">↗_↙</span><small>EYE ROLL</small></button>
+              </div>
+              <div class="challenge-feedback" id="challengeFeedback" aria-live="polite">Pick a face!</div>
+            </div>
+            <div class="idea-prompt" id="ideaPrompt"><span>✎</span><b>Now brainstorm!</b> Draw your own rocket in Johnny’s giant idea bubble.</div>
+          </div>
+        </article>
+
+        <article class="story-page future-page build-page" data-page="2" aria-labelledby="pageTwoTitle" aria-hidden="true">
+          <div class="build-scene">
+            <div class="page-kicker"><span class="page-number">02</span><span>THE BUILDING PLAN</span></div>
+            <div class="workbench">
+              <div class="workshop-spark spark-one">✦</div><div class="workshop-spark spark-two">✦</div>
+              <div class="tape-roll"></div><div class="pencil-cup">✎<span>✦</span></div>
+              <div class="cardboard-box" id="rocketBox" aria-label="Cardboard rocket parts box">
+                <div class="box-flap box-flap-back"></div><div class="box-flap box-flap-left"></div><div class="box-flap box-flap-right"></div>
+                <div class="box-label">JOHNNY’S<br /><b>ROCKET KIT</b></div>
+                <div class="drop-slots">
+                  <div class="drop-slot" data-slot="body"><span class="slot-icon part-body"></span><b>BODY</b><em>drop here</em></div>
+                  <div class="drop-slot" data-slot="point"><span class="slot-icon part-point"></span><b>POINT</b><em>drop here</em></div>
+                  <div class="drop-slot" data-slot="blaster"><span class="slot-icon part-blaster"></span><b>BLASTER</b><em>drop here</em></div>
+                  <div class="drop-slot" data-slot="wings"><span class="slot-icon part-wings"></span><b>WINGS</b><em>drop here</em></div>
+                </div>
+              </div>
+              <div class="box-shadow"></div>
+              <div class="build-burst" id="buildSuccess">ROCKET KIT<br /><b>COMPLETE!</b> ✦</div>
+            </div>
+          </div>
+          <div class="build-copy">
+            <div class="page-kicker"><span>MISSION 02</span><span>THE PARTS LIST</span></div>
+            <h2 id="pageTwoTitle">A rocket needs<br /><span>all the right pieces.</span></h2>
+            <p>Johnny found a sturdy cardboard box. Now help him gather the parts for a rocketship!</p>
+            <div class="parts-grid" id="partsTray" aria-label="Draggable rocket parts">
+              <button class="rocket-part" type="button" draggable="true" data-part="body"><span class="part-icon part-body"></span><strong>BODY</strong><small>the tube</small></button>
+              <button class="rocket-part" type="button" draggable="true" data-part="point"><span class="part-icon part-point"></span><strong>POINT</strong><small>the tippy top</small></button>
+              <button class="rocket-part" type="button" draggable="true" data-part="blaster"><span class="part-icon part-blaster"></span><strong>BLASTER</strong><small>the zoomer</small></button>
+              <button class="rocket-part" type="button" draggable="true" data-part="wings"><span class="part-icon part-wings"></span><strong>WINGS</strong><small>the stabilizers</small></button>
+            </div>
+            <div class="build-feedback" id="buildFeedback" aria-live="polite"><span>✦</span> Drag each piece into the cardboard box.</div>
+            <button class="reset-build" id="resetBuild" type="button">↻ Reset the parts</button>
+          </div>
+        </article>
+        <article class="story-page desk-page" data-page="3" aria-labelledby="pageThreeTitle" aria-hidden="true">
+          <div class="desk-scene-wrap">
+            <div class="page-kicker"><span class="page-number">03</span><span>THE WORK DESK</span></div>
+            <div class="desktop-scene blueprint-scene" id="desktopScene">
+              <div class="blueprint-wall-doodle doodle-one">✦</div><div class="blueprint-wall-doodle doodle-two">✎</div>
+              <div class="blueprint-inspiration"><span>JOHNNY'S FIRST IDEA</span><canvas id="ideaPinCanvas" width="260" height="160" aria-label="Johnny's first rocket idea pinned beside the blueprint"></canvas><b>✦</b></div>
+              <div class="blueprint-paper">
+                <div class="blueprint-paper-heading"><span>ROCKET BLUEPRINT</span><b>DRAWING ZONE</b></div>
+                <canvas id="blueprintCanvas" width="620" height="420" aria-label="Draw your own rocket on this blueprint"></canvas>
+                <div class="blueprint-paper-footer"><span>NAME: JOHNNY + YOU</span><span>TOP SECRET ✦</span></div>
+              </div>
+              <div class="blueprint-pencil" aria-hidden="true">✎</div>
+            </div>
+          </div>
+          <div class="desk-copy">
+            <div class="page-kicker"><span>MISSION 03</span><span>MAKE IT YOURS</span></div>
+            <h2 id="pageThreeTitle">Draw your own<br /><span>rocket!</span></h2>
+            <p>Use the blueprint to design a rocket all by yourself. Pick a color, choose a brush, and fill the page with your very own rocket idea.</p>
+            <div class="blueprint-tools" id="blueprintTools" aria-label="Blueprint drawing tools">
+              <div class="tool-row"><b>COLORS</b><div class="color-swatches"><button class="color-swatch active" type="button" data-color="#302b5c" aria-label="Ink blue" style="--swatch:#302b5c"></button><button class="color-swatch" type="button" data-color="#ef7166" aria-label="Coral" style="--swatch:#ef7166"></button><button class="color-swatch" type="button" data-color="#f6c451" aria-label="Sun yellow" style="--swatch:#f6c451"></button><button class="color-swatch" type="button" data-color="#83d9b9" aria-label="Mint" style="--swatch:#83d9b9"></button><button class="color-swatch" type="button" data-color="#b5a0e7" aria-label="Lavender" style="--swatch:#b5a0e7"></button><button class="color-swatch" type="button" data-color="#f3a9bd" aria-label="Pink" style="--swatch:#f3a9bd"></button><button class="color-swatch" type="button" data-color="#f28b64" aria-label="Orange" style="--swatch:#f28b64"></button><button class="color-swatch" type="button" data-color="#6b83d7" aria-label="Sky blue" style="--swatch:#6b83d7"></button><button class="color-swatch" type="button" data-color="#8bcf62" aria-label="Leaf green" style="--swatch:#8bcf62"></button><button class="color-swatch" type="button" data-color="#fff8e7" aria-label="Paper white" style="--swatch:#fff8e7"></button></div></div>
+              <div class="tool-row"><b>BRUSH</b><div class="brush-sizes"><button class="brush-size active" type="button" data-size="5" aria-label="Small brush"><i></i></button><button class="brush-size" type="button" data-size="11" aria-label="Medium brush"><i></i></button><button class="brush-size" type="button" data-size="20" aria-label="Large brush"><i></i></button><button class="brush-size" type="button" data-size="32" aria-label="Extra large brush"><i></i></button></div></div>
+            </div>
+            <div class="blueprint-feedback" id="blueprintFeedback" aria-live="polite"><span>✦</span> Start drawing your rocket on the blueprint.</div>
+            <button class="reset-assembly" id="resetBlueprint" type="button">↻ Clear the blueprint</button>
+          </div>
+        </article>
+        <article class="story-page blastoff-page" data-page="4" aria-labelledby="pageFourTitle" aria-hidden="true">
+          <div class="blastoff-scene" id="blastoffScene">
+            <div class="blast-stars" aria-hidden="true">
+              <span class="blast-star star-a">✦</span><span class="blast-star star-b">✧</span><span class="blast-star star-c">✦</span><span class="blast-star star-d">✧</span><span class="blast-star star-e">✦</span><span class="blast-star star-f">✧</span><span class="blast-star star-g">✦</span><span class="blast-star star-h">✧</span>
+            </div>
+            <div class="blast-instructions">Press <b>4 times</b> to <strong>BLASTOFF!</strong></div>
+            <div class="blast-moon" aria-hidden="true"></div>
+            <div class="grass-field"><span class="grass-tuft tuft-a">⌁</span><span class="grass-tuft tuft-b">⌁</span><span class="grass-tuft tuft-c">⌁</span></div>
+            <div class="launch-pad" aria-hidden="true"></div>
+            <div class="launch-rocket" id="launchRocket" aria-label="Your hand-drawn rocket ready to launch">
+              <canvas id="launchDrawingCanvas" width="220" height="280" aria-label="Your hand-drawn rocket"></canvas>
+              <div class="launch-flame"></div>
+            </div>
+            <div class="blast-poof" id="blastPoof" aria-hidden="true"><span>POOF!</span><b class="poof-spark poof-one">✦</b><b class="poof-spark poof-two">✧</b><b class="poof-spark poof-three">✦</b><b class="poof-spark poof-four">✧</b></div>
+            <div class="push-meter" id="pushMeter" aria-live="polite"><span class="push-dot"></span><span class="push-dot"></span><span class="push-dot"></span><span class="push-dot"></span><small id="pushCount">0 / 4</small></div>
+            <button class="push-button" id="pushButton" type="button">PUSH! <span>✦</span></button>
+          </div>
+          <div class="blastoff-copy">
+            <div class="page-kicker"><span class="page-number">04</span><span>THE BIG BLAST</span></div>
+            <h2 id="pageFourTitle">Ready, set,<br /><span>blast off!</span></h2>
+            <p>Your hand-drawn rocket is ready. The stars are waiting, and four big pushes can send your idea into space.</p>
+          </div>
+        </article>
+        <article class="story-page mars-page" data-page="5" aria-labelledby="pageFiveTitle" aria-hidden="true">
+          <div class="mars-landing-scene" id="marsLandingScene">
+            <div class="mars-night" aria-hidden="true">
+              <span class="mars-star ms-a">✦</span><span class="mars-star ms-b">✧</span><span class="mars-star ms-c">✦</span><span class="mars-star ms-d">✧</span><span class="mars-star ms-e">✦</span><span class="mars-star ms-f">✧</span><span class="mars-star ms-g">✦</span>
+              <span class="mars-earth" aria-hidden="true"></span>
+            </div>
+            <div class="mars-ground" aria-hidden="true"><span class="mars-crater crater-a"></span><span class="mars-crater crater-b"></span><span class="mars-crater crater-c"></span><span class="mars-rock rock-a"></span><span class="mars-rock rock-b"></span><span class="mars-rock rock-c"></span></div>
+            <div class="mars-flag" aria-hidden="true"><i></i><b>★</b></div>
+            <div class="astronaut astronaut-johnny" aria-label="Johnny in an astronaut suit">
+              <div class="astro-backpack"></div><div class="astro-helmet"><span class="astro-glass"><span class="glass-shine"></span></span><span class="astro-face-johnny"><i class="astro-eye astro-eye-left"></i><i class="astro-eye astro-eye-right"></i><b class="astro-smile"></b><em class="astro-nose"></em></span></div><div class="astro-neck"></div><div class="astro-suit"><span class="suit-badge">J</span><span class="suit-control"></span></div><span class="astro-arm astro-arm-left"></span><span class="astro-arm astro-arm-right"></span><span class="astro-leg astro-leg-left"></span><span class="astro-leg astro-leg-right"></span><span class="astro-boot astro-boot-left"></span><span class="astro-boot astro-boot-right"></span><span class="astro-tag">JOHNNY</span>
+            </div>
+            <div class="astronaut astronaut-max" aria-label="Max in an astronaut suit">
+              <div class="astro-backpack"></div><div class="astro-helmet"><span class="astro-glass"><span class="glass-shine"></span></span><span class="astro-face-max"><span class="max-ear max-ear-left"></span><span class="max-ear max-ear-right"></span><i class="astro-eye astro-eye-left"></i><i class="astro-eye astro-eye-right"></i><b class="max-muzzle"></b></span></div><div class="astro-neck"></div><div class="astro-suit"><span class="suit-badge">M</span><span class="suit-control"></span></div><span class="astro-arm astro-arm-left"></span><span class="astro-arm astro-arm-right"></span><span class="astro-dog-leg dog-leg-front-left"></span><span class="astro-dog-leg dog-leg-front-right"></span><span class="astro-dog-leg dog-leg-back-left"></span><span class="astro-dog-leg dog-leg-back-right"></span><span class="astro-dog-paw dog-paw-front-left"></span><span class="astro-dog-paw dog-paw-front-right"></span><span class="astro-dog-paw dog-paw-back-left"></span><span class="astro-dog-paw dog-paw-back-right"></span><span class="astro-tail"></span><span class="astro-tag">MAX</span>
+            </div>
+            <div class="dig-sites" aria-label="Mars dig sites">
+              <button class="dig-site dig-site-gem" type="button" data-treasure="gem" aria-label="Dig for a ruby gem"><span class="dig-mound"></span><span class="dig-hole"></span><img class="dig-treasure gem-ruby" src="assets/gem-ruby.png" alt="Ruby gem"><small>DIG!</small></button>
+              <button class="dig-site dig-site-crystal" type="button" data-treasure="crystal" aria-label="Dig for a green crystal"><span class="dig-mound"></span><span class="dig-hole"></span><img class="dig-treasure gem-green" src="assets/gem-green.png" alt="Green crystal"><small>DIG!</small></button>
+              <button class="dig-site dig-site-good" type="button" data-treasure="goods" aria-label="Dig for a blue gem"><span class="dig-mound"></span><span class="dig-hole"></span><img class="dig-treasure gem-blue" src="assets/gem-blue.png" alt="Blue gem"><small>DIG!</small></button>
+            </div>
+            <div class="dig-sparkle-burst" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span></div>
+            <div class="treasure-meter" id="treasureMeter" aria-live="polite"><span class="treasure-dot"></span><span class="treasure-dot"></span><span class="treasure-dot"></span><small id="treasureCount">0 / 3 found</small></div>
+            <div class="end-banner" id="endBanner" aria-hidden="true">THE END!</div>
+          </div>
+          <div class="mars-copy">
+            <div class="page-kicker"><span class="page-number">05</span><span>THE RED PLANET</span></div>
+            <h2 id="pageFiveTitle">A rocky place<br /><span>full of surprises!</span></h2>
+            <p>Johnny and Max have landed on Mars. Tap each dusty dig spot to uncover the gems and useful goods hiding underneath.</p>
+            <div class="mars-instruction"><span>✦</span><b>Tap the mounds.</b><br />See what they find!</div>
+            <div class="ending-panel" id="endingPanel" aria-live="polite"><p>Would you like to restart the book?</p><button class="restart-button" id="restartButton" type="button">YES — START OVER <span>↻</span></button></div>
+          </div>
+        </article>
+        <button class="page-arrow right-arrow" id="nextButton" type="button" aria-label="Next page">→</button>
+      </div>
+      <div class="page-dots" aria-label="Choose a page"><button class="page-dot cover-dot active" data-goto="0" aria-label="Go to front cover"></button><button class="page-dot" data-goto="1" aria-label="Go to page 1"></button><button class="page-dot" data-goto="2" aria-label="Go to page 2"></button><button class="page-dot" data-goto="3" aria-label="Go to page 3"></button><button class="page-dot" data-goto="4" aria-label="Go to page 4"></button><button class="page-dot" data-goto="5" aria-label="Go to page 5"></button></div>
+    </section>
+    <footer class="footer"><span>MADE FOR CURIOUS MINDS</span><span>✦</span><span>KEEP DREAMING, JOHNNY</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js?v=20261028blueprint"></script>
+</body>
+</html>
